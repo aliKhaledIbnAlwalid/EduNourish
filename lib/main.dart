@@ -1,3 +1,4 @@
+import 'package:edunourish/parent/parent_profile.dart';
 import 'package:flutter/material.dart';
 
 import 'intro_Screens/on_boarding_screen.dart';
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: OnBoardingScreen(),
+      home: ParentProfile(),
     );
   }
 }

@@ -168,15 +168,12 @@ class _LoginScreenState extends State<LoginScreen>
                       alignment: Alignment.centerRight,
                       child: Padding(
                         padding: const EdgeInsets.only(left: 60, top: 140),
-                        child: TextButton(
-                          onPressed: () {},
-                          child: const Text(
-                            "Log In",
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 35,
-                                fontWeight: FontWeight.bold),
-                          ),
+                        child: const Text(
+                          "Log In",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 35,
+                              fontWeight: FontWeight.bold),
                         ),
                       ),
                     ),
