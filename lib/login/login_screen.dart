@@ -164,11 +164,11 @@ class _LoginScreenState extends State<LoginScreen>
                       radius: 150,
                       backgroundColor: Colors.blue.shade300,
                     ),
-                    Align(
+                    const Align(
                       alignment: Alignment.centerRight,
                       child: Padding(
-                        padding: const EdgeInsets.only(left: 60, top: 140),
-                        child: const Text(
+                        padding: EdgeInsets.only(left: 60, top: 140),
+                        child: Text(
                           "Log In",
                           style: TextStyle(
                               color: Colors.white,
