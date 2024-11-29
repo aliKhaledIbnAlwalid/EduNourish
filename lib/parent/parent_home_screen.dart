@@ -45,14 +45,14 @@ class ParentHomeScreen extends StatelessWidget {
                     Bottom: 40,
                     Right: 20),
                 InkWell(
-                  onTap: (){
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => MyChildScreen(), // Navigate to MyChildScreen
-                      ),
-                    );
-                  },
+                  // onTap: (){
+                  //   Navigator.push(
+                  //     context,
+                  //     MaterialPageRoute(
+                  //       builder: (context) => MyChildScreen(), // Navigate to MyChildScreen
+                  //     ),
+                  //   );
+                  // },
                   child: _buildIconCard(
                       label: 'My child',
                       imagePath: 'assets/parent/images/Student.png',
