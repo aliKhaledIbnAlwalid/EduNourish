@@ -44,6 +44,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_svg: ^2.0.16
 
 
 
@@ -69,6 +70,8 @@ flutter:
   assets:
     - assets/
     - assets/parent/
+    - assets/parent/images/
+    - assets/parent/icons/
     - assets/payment_screen/
     - assets/bus_screen/
     - assets/classes_screen/

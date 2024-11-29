@@ -1,9 +1,21 @@
+import 'package:edunourish/parent/bus_screen.dart';
+import 'package:edunourish/parent/payment_screen.dart';
+import 'package:edunourish/parent/settings_screen.dart';
+import 'package:edunourish/parent_home.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
-class ParentProfile extends StatelessWidget {
+int _selectedIndex=0;
+
+class ParentProfile extends StatefulWidget {
   const ParentProfile({Key? key}) : super(key: key);
 
+  @override
+  State<ParentProfile> createState() => _ParentProfileState();
+}
+
+class _ParentProfileState extends State<ParentProfile> {
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -40,7 +52,7 @@ class ParentProfile extends StatelessWidget {
                     50, // Center horizontally
                 child: CircleAvatar(
                   radius: 50,
-                  backgroundImage: AssetImage('assets/parent/Ellipse 12.png'),
+                  backgroundImage: AssetImage('assets/parent/images/ParentImage.png'),
                 ),
               ),
               Column(
@@ -65,53 +77,33 @@ class ParentProfile extends StatelessWidget {
               ),
             ],
           ),
-          bottomNavigationBar: Container(
-            color: Colors.black,
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 15.0,vertical: 12.0),
-              child: GNav(
-                backgroundColor: Colors.black,
-                color: Colors.white,
-                activeColor: Colors.white,
-                tabBackgroundColor: Colors.grey.shade600,
-                padding: EdgeInsets.all(16),
-                gap: 8,
-                tabs: const [
-                  GButton(icon: Icons.settings, text: 'Settings',),
-                  GButton(icon: Icons.paypal , text: 'Paypal',),
-                  GButton(icon: Icons.home_outlined , text: 'Home',),
-                  GButton(icon: Icons.directions_bus , text: 'Bus',),
-                  GButton(icon: Icons.supervised_user_circle, text: 'User',),
-                ],
-              ),
-            ),
-          ),
+
         ),
         // replace them by putting appBar in Scaffold
-        Positioned(
-          top: 20, // Adjust this value to control vertical position
-          left: 10, // Controls the horizontal position from the left
-          child: IconButton(
-            onPressed: (){},
-            icon: Icon(
-              Icons.format_list_bulleted_outlined, // Icon for top-left
-              color: Colors.black, // You can adjust the color
-              size: 30, // Icon size
-            ),
-          ),
-        ),
-        Positioned(
-          top: 20, // Adjust this value to control vertical position
-          right: 10, // Controls the horizontal position from the right
-          child: IconButton(
-            onPressed: (){},
-            icon: Icon(
-              Icons.notifications_none_outlined, // Icon for top-right
-              color: Colors.black, // You can adjust the color
-              size: 30, // Icon size
-            ),
-          ),
-        ),
+        // Positioned(
+        //   top: 20, // Adjust this value to control vertical position
+        //   left: 10, // Controls the horizontal position from the left
+        //   child: IconButton(
+        //     onPressed: (){},
+        //     icon: Icon(
+        //       Icons.format_list_bulleted_outlined, // Icon for top-left
+        //       color: Colors.black, // You can adjust the color
+        //       size: 30, // Icon size
+        //     ),
+        //   ),
+        // ),
+        // Positioned(
+        //   top: 20, // Adjust this value to control vertical position
+        //   right: 10, // Controls the horizontal position from the right
+        //   child: IconButton(
+        //     onPressed: (){},
+        //     icon: Icon(
+        //       Icons.notifications_none_outlined, // Icon for top-right
+        //       color: Colors.black, // You can adjust the color
+        //       size: 30, // Icon size
+        //     ),
+        //   ),
+        // ),
       ],
     );
   }

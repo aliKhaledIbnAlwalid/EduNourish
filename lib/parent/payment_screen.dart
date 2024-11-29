@@ -1,25 +1,24 @@
+import 'package:edunourish/parent/bus_screen.dart';
+import 'package:edunourish/parent/settings_screen.dart';
+import 'package:edunourish/parent_home.dart';
+import 'package:edunourish/parent/parent_profile.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+
+int _selectedIndex =0;
 
 // remember , when we the user start typing his information may be face a problem
-class PaymentScreen extends StatelessWidget {
+class PaymentScreen extends StatefulWidget {
+  @override
+  State<PaymentScreen> createState() => _PaymentScreenState();
+}
+
+class _PaymentScreenState extends State<PaymentScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: true, // Adjust body when keyboard appears
-      appBar: AppBar(
-        backgroundColor: Color(0xFFB4DFEB),
-        leading: IconButton(
-            icon: Icon(Icons.format_list_bulleted_outlined, color: Colors.black),
-            onPressed: (){},
-        ),
-        actions: [
-          IconButton(
-            icon: Icon(Icons.notifications_none_outlined, color: Colors.black),
-            onPressed: () {},
-          ),
-        ],
-      ),
       backgroundColor: Color(0xFFB4DFEB),
       body: SingleChildScrollView(
         child: Padding(
@@ -55,6 +54,7 @@ class PaymentScreen extends StatelessWidget {
               SizedBox(height: 10),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   PaymentMethodButton(label: 'Credit', isSelected: true),
                   PaymentMethodButton(label: 'Debit', isSelected: false),
@@ -128,7 +128,7 @@ class PaymentScreen extends StatelessWidget {
               SizedBox(height: 40,),
               GestureDetector(
                 onTap: () {
-        
+
                 },
                 child: Center(
                   child: Container(
@@ -154,27 +154,68 @@ class PaymentScreen extends StatelessWidget {
           ),
         ),
       ),
-      bottomNavigationBar: Container(
-        color: Color(0xFFB4DFEB),
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 15.0,vertical: 12.0),
-          child: GNav(
-            backgroundColor: Color(0xFFB4DFEB),
-            color: Colors.white,
-            activeColor: Colors.black,
-            tabBackgroundColor: Color(0xFF41708D),
-            padding: EdgeInsets.all(16),
-            gap: 8,
-            tabs: const [
-              GButton(icon: Icons.settings, text: 'Settings',iconColor: Colors.black,),
-              GButton(icon: Icons.paypal , text: 'Paypal',iconColor: Colors.black,),
-              GButton(icon: Icons.home_outlined , text: 'Home',iconColor: Colors.black,),
-              GButton(icon: Icons.directions_bus , text: 'Bus',iconColor: Colors.black,),
-              GButton(icon: Icons.supervised_user_circle, text: 'User',iconColor: Colors.black,),
-            ],
-          ),
-        ),
-      ),
+      // bottomNavigationBar: Container(
+      //   color: Colors.white, // the color for the container before the padding
+      //   child: Padding(
+      //     padding: const EdgeInsets.symmetric(horizontal: 15.0,vertical: 15.0),
+      //     child: GNav(
+      //       backgroundColor: Colors.red,  // the background color for the padding part consists of all items
+      //       // color: Colors.black, // Unselected icon color
+      //       // activeColor: Colors.black, // Selected icon color
+      //       tabBackgroundColor: Colors.green,
+      //       padding: EdgeInsets.all(6),
+      //       // gap: 8,
+      //       tabs:  [
+      //         GButton(icon: Icons.circle, leading: SvgPicture.asset('assets/parent/icons/Settings.svg'), text: '',iconColor: Colors.black,),
+      //         GButton(icon: Icons.circle, leading: SvgPicture.asset('assets/parent/icons/PayPal.svg'), text: '',iconColor: Colors.black,),
+      //         GButton(icon: Icons.circle, leading: SvgPicture.asset('assets/parent/icons/Home.svg'), text: '',iconColor: Colors.black,),
+      //         GButton(icon: Icons.circle, leading: SvgPicture.asset('assets/parent/icons/directions_bus.svg'), text: '',iconColor: Colors.black,),
+      //         GButton(icon: Icons.circle, leading: SvgPicture.asset('assets/parent/icons/User Profile 02.svg'), text: '',iconColor: Colors.black,),
+      //       ],
+      //       selectedIndex: _selectedIndex,
+      //       onTabChange: (index) {
+      //         _selectedIndex = index;
+      //         setState(() {
+      //           // _selectedIndex = index; // Update the selected index
+      //         });
+      //
+      //         // Navigate to a specific screen based on the index
+      //         // switch (index) {
+      //         //   case 0:
+      //         //     Navigator.push(
+      //         //       context,
+      //         //       MaterialPageRoute(builder: (context) => SettingsScreen()),
+      //         //     );
+      //         //     break;
+      //         //   case 1:
+      //         //     Navigator.push(
+      //         //       context,
+      //         //       MaterialPageRoute(builder: (context) => PaymentScreen()),
+      //         //     );
+      //         //     break;
+      //         //   case 2:
+      //         //     Navigator.push(
+      //         //       context,
+      //         //       MaterialPageRoute(builder: (context) => ParentHome()),
+      //         //     );
+      //         //     break;
+      //         //   case 3:
+      //         //     Navigator.push(
+      //         //       context,
+      //         //       MaterialPageRoute(builder: (context) => BusScreen()),
+      //         //     );
+      //         //     break;
+      //         //   case 4:
+      //         //     Navigator.push(
+      //         //       context,
+      //         //       MaterialPageRoute(builder: (context) => ParentProfile()),
+      //         //     );
+      //         //     break;
+      //         // }
+      //       },
+      //     ),
+      //   ),
+      // ),
     );
   }
 }
@@ -188,13 +229,41 @@ class PaymentMethodButton extends StatelessWidget {
     required this.isSelected,
   });
 
-  @override
+
   Widget build(BuildContext context) {
-    return ChoiceChip(
-      label: Text(label),
-      selected: isSelected,
-      selectedColor: Colors.blue,
-      onSelected: (value) {},
+    return GestureDetector(
+      onTap: () {
+        // Add tap functionality here
+      },
+      child: Container(
+        padding: EdgeInsets.symmetric(vertical: 12, horizontal: 24),
+        decoration: BoxDecoration(
+          color: Colors.white ,
+          borderRadius: BorderRadius.circular(10),
+          // border: Border.all(
+          //   color: Colors.black,
+          // ),
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Text(
+              label,
+              style: TextStyle(
+                fontSize: 15,
+                fontWeight: FontWeight.w500,
+                color: Colors.black,
+              ),
+            ),
+            SizedBox(width: 5,),
+            SvgPicture.asset(
+              'assets/parent/icons/check.svg', // Path to your SVG icon
+              // width: 24,  // You can adjust the width as needed
+              // height: 24, // You can adjust the height as needed
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
