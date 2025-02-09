@@ -9,7 +9,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 int _selectedIndex=0;
 
 class ParentProfile extends StatefulWidget {
-  const ParentProfile({Key? key}) : super(key: key);
+  const ParentProfile({super.key});
 
   @override
   State<ParentProfile> createState() => _ParentProfileState();
@@ -20,7 +20,7 @@ class _ParentProfileState extends State<ParentProfile> {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Container(
+        SizedBox(
           height: MediaQuery.of(context).size.height * 0.3,
           child: Image.asset(
             'assets/parent/Ellipse 11.png',
@@ -32,7 +32,7 @@ class _ParentProfileState extends State<ParentProfile> {
           // width: MediaQuery.of(context).size.width,
           child: Container(
             // height: MediaQuery.of(context).size.height * 0.3,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               shape: BoxShape.circle,
             ),
             child: Image.asset(
@@ -50,14 +50,14 @@ class _ParentProfileState extends State<ParentProfile> {
                     160, // Adjust this to match the red circle's vertical position
                 left: MediaQuery.of(context).size.width / 2 -
                     50, // Center horizontally
-                child: CircleAvatar(
+                child: const CircleAvatar(
                   radius: 50,
                   backgroundImage: AssetImage('assets/parent/images/ParentImage.png'),
                 ),
               ),
               Column(
                 children: [
-                  SizedBox(height: 300,),
+                  const SizedBox(height: 300,),
                   Expanded(
                     child: Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -113,7 +113,7 @@ class ProfileDetail extends StatelessWidget {
   final String label;
   final String value;
 
-  const ProfileDetail({
+  const ProfileDetail({super.key, 
     required this.label,
     required this.value,
   });

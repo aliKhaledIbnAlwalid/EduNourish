@@ -10,6 +10,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 int _selectedIndex = 4;
 
 class ParentHome extends StatefulWidget {
+  const ParentHome({super.key});
+
   @override
   State<ParentHome> createState() => _ParentHomeState();
 }
@@ -23,12 +25,12 @@ class _ParentHomeState extends State<ParentHome> {
       AppBar(
         backgroundColor: _appBarColors[_selectedIndex],
         leading: IconButton(
-          icon: Icon(Icons.format_list_bulleted_outlined, color: Colors.black),
+          icon: const Icon(Icons.format_list_bulleted_outlined, color: Colors.black),
           onPressed: (){},
         ),
         actions: [
           IconButton(
-            icon: Icon(Icons.notifications_none_outlined, color: Colors.black),
+            icon: const Icon(Icons.notifications_none_outlined, color: Colors.black),
             onPressed: () {},
           ),
         ],
@@ -37,15 +39,15 @@ class _ParentHomeState extends State<ParentHome> {
       bottomNavigationBar: Container(
         color: _backgroundColorForBottomNavigationBarColors[_selectedIndex],
         child: Padding(
-          padding:  EdgeInsets.only(
+          padding:  const EdgeInsets.only(
             left: 8,
             bottom: 8,
             right: 8,
           ),
           child: GNav(
             backgroundColor: _backgroundColorForBottomNavigationBarColors[_selectedIndex],
-            tabBackgroundColor: Color(0xFF88cbf5),
-            padding: EdgeInsets.symmetric(horizontal: 16,vertical: 16),
+            tabBackgroundColor: const Color(0xFF88cbf5),
+            padding: const EdgeInsets.symmetric(horizontal: 16,vertical: 16),
             tabs: [
               GButton(
                 icon: Icons.circle,
@@ -91,11 +93,11 @@ class _ParentHomeState extends State<ParentHome> {
     );
   }
 
-  List<Color> _appBarColors = [
+  final List<Color> _appBarColors = [
     Colors.transparent,
-    Color(0xFFB4DFEB),
-    Color(0xFF72B7DC),
-    Color(0xFF70C1F3),
+    const Color(0xFFB4DFEB),
+    const Color(0xFF72B7DC),
+    const Color(0xFF70C1F3),
     Colors.transparent,
   ];
 
@@ -104,16 +106,16 @@ class _ParentHomeState extends State<ParentHome> {
     PaymentScreen(),
     ParentHomeScreen(),
     BusScreen(),
-    ParentProfile(),
+    const ParentProfile(),
   ];
 
 
- List<Color> _backgroundColorForBottomNavigationBarColors = [
+ final List<Color> _backgroundColorForBottomNavigationBarColors = [
    Colors.white,
-   Color(0xFFB4DFEB),
-   Color(0xFF72B7DC),
-   Color(0xFF70C1F4),
-   Color(0xFF7ABED1),
+   const Color(0xFFB4DFEB),
+   const Color(0xFF72B7DC),
+   const Color(0xFF70C1F4),
+   const Color(0xFF7ABED1),
  ];
 
 }

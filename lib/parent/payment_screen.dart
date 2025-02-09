@@ -10,6 +10,8 @@ int _selectedIndex =0;
 
 // remember , when we the user start typing his information may be face a problem
 class PaymentScreen extends StatefulWidget {
+  const PaymentScreen({super.key});
+
   @override
   State<PaymentScreen> createState() => _PaymentScreenState();
 }
@@ -19,7 +21,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: true, // Adjust body when keyboard appears
-      backgroundColor: Color(0xFFB4DFEB),
+      backgroundColor: const Color(0xFFB4DFEB),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.only(
@@ -30,29 +32,29 @@ class _PaymentScreenState extends State<PaymentScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Center(
+              const Center(
                 child: Text(
                   'Payment data',
                   style: TextStyle(fontSize:24 ,color: Colors.black,fontWeight: FontWeight.w600),
                 ),
               ),
-              SizedBox(height: 30),
-              Text(
+              const SizedBox(height: 30),
+              const Text(
                 'Total price',
                 style: TextStyle(fontSize: 16, color: Colors.black,fontWeight: FontWeight.w400),
               ),
-              SizedBox(height: 8),
-              Text(
+              const SizedBox(height: 8),
+              const Text(
                 '\$ 2280.00',
                 style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
               ),
-              SizedBox(height: 21),
-              Text(
+              const SizedBox(height: 21),
+              const Text(
                 'payment method',
                 style: TextStyle(fontSize: 16, color: Colors.black),
               ),
-              SizedBox(height: 10),
-              Row(
+              const SizedBox(height: 10),
+              const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
@@ -61,7 +63,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                   PaymentMethodButton(label: 'paypal', isSelected: false),
                 ],
               ),
-              SizedBox(height: 21),
+              const SizedBox(height: 21),
               TextField(
                 obscureText: true,  // Makes the input characters appear as asterisks
                 decoration: InputDecoration(
@@ -76,15 +78,15 @@ class _PaymentScreenState extends State<PaymentScreen> {
                           width: 45,
                         ),
                       ),
-                      SizedBox(width: 20,)
+                      const SizedBox(width: 20,)
                     ],
                   ),
-                  border: OutlineInputBorder(),
+                  border: const OutlineInputBorder(),
                 ),
                 keyboardType: TextInputType.number,  // Ensures only numeric input
               ),
-              SizedBox(height: 21),
-              Row(
+              const SizedBox(height: 21),
+              const Row(
                 children: [
                   Expanded(
                     child: TextField(
@@ -105,18 +107,18 @@ class _PaymentScreenState extends State<PaymentScreen> {
                   ),
                 ],
               ),
-              SizedBox(height: 21),
-              TextField(
+              const SizedBox(height: 21),
+              const TextField(
                 decoration: InputDecoration(
                   labelText: 'card holder',
                   hintText: 'Your name and username',
                   border: OutlineInputBorder(),
                 ),
               ),
-              SizedBox(height: 21),
+              const SizedBox(height: 21),
               Row(
                 children: [
-                  Expanded(
+                  const Expanded(
                     child: Text(
                       'Save card data for future payment',
                       style: TextStyle(fontSize: 16),
@@ -125,7 +127,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                   Switch(value: true, onChanged: (value) {}),
                 ],
               ),
-              SizedBox(height: 40,),
+              const SizedBox(height: 40,),
               GestureDetector(
                 onTap: () {
 
@@ -139,7 +141,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                       borderRadius: BorderRadius.circular(12), // Rounded corners
                     ),
                     alignment: Alignment.center,
-                    child: Text(
+                    child: const Text(
                       'Pay',
                       style: TextStyle(
                         color: Colors.white, // Text color
@@ -224,19 +226,20 @@ class PaymentMethodButton extends StatelessWidget {
   final String label;
   final bool isSelected;
 
-  const PaymentMethodButton({
+  const PaymentMethodButton({super.key, 
     required this.label,
     required this.isSelected,
   });
 
 
+  @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
         // Add tap functionality here
       },
       child: Container(
-        padding: EdgeInsets.symmetric(vertical: 12, horizontal: 24),
+        padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 24),
         decoration: BoxDecoration(
           color: Colors.white ,
           borderRadius: BorderRadius.circular(10),
@@ -249,13 +252,13 @@ class PaymentMethodButton extends StatelessWidget {
           children: [
             Text(
               label,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 15,
                 fontWeight: FontWeight.w500,
                 color: Colors.black,
               ),
             ),
-            SizedBox(width: 5,),
+            const SizedBox(width: 5,),
             SvgPicture.asset(
               'assets/parent/icons/check.svg', // Path to your SVG icon
               // width: 24,  // You can adjust the width as needed

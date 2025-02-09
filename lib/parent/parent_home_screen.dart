@@ -2,11 +2,13 @@ import 'package:edunourish/parent/my_child_screen.dart';
 import 'package:flutter/material.dart';
 
 class ParentHomeScreen extends StatelessWidget {
+  const ParentHomeScreen({super.key});
+
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF72B7DC),
+      backgroundColor: const Color(0xFF72B7DC),
       body: Column(
         children: [
           // School News Section
@@ -15,9 +17,9 @@ class ParentHomeScreen extends StatelessWidget {
             child: Container(
               height: 200,
               decoration: BoxDecoration(
-                color: Color(0xFF72B7DC),
+                color: const Color(0xFF72B7DC),
                 borderRadius: BorderRadius.circular(40),
-                image: DecorationImage(
+                image: const DecorationImage(
                   image: AssetImage(
                       'assets/parent/images/School_News.png'), // Replace with your asset path
                   // fit: BoxFit.fitWidth,
@@ -26,14 +28,14 @@ class ParentHomeScreen extends StatelessWidget {
               alignment: Alignment.center,
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           // Buttons Section
           Expanded(
             child: GridView.count(
               crossAxisCount: 2,
-              padding: EdgeInsets.all(40),
+              padding: const EdgeInsets.all(40),
               crossAxisSpacing: 35,
               mainAxisSpacing: 35,
               children: [
@@ -98,9 +100,9 @@ Widget _buildIconCard(
       // Background Card
       Container(
         decoration: BoxDecoration(
-          color: Color(0xFF82D1FC),
+          color: const Color(0xFF82D1FC),
           borderRadius: BorderRadius.circular(40),
-          boxShadow: [
+          boxShadow: const [
             BoxShadow(
               color: Colors.black26,
               blurRadius: 4,
@@ -113,7 +115,7 @@ Widget _buildIconCard(
           padding: const EdgeInsets.only(bottom: 20.0),
           child: Text(
             label,
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 22,
               fontWeight: FontWeight.w700,
             ),
