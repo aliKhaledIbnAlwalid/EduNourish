@@ -1,6 +1,7 @@
 import 'package:edunourish/login/login_screen.dart';
 
 import 'package:edunourish/parent/parent_profile.dart';
+import 'package:edunourish/parent_home.dart';
 import 'package:flutter/material.dart';
 
 class ChoiceScreen extends StatelessWidget {
@@ -35,7 +36,7 @@ class ChoiceScreen extends StatelessWidget {
                     Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => const ParentProfile(),
+                        builder: (context) => ParentHome(),
                       ),
                     );
                   },
