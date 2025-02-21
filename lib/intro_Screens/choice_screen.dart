@@ -1,8 +1,9 @@
 import 'package:edunourish/login/login_screen.dart';
 import 'package:edunourish/parent/parent_home_screen.dart';
 
-import 'package:edunourish/parent_home.dart';
 import 'package:flutter/material.dart';
+
+import '../Student_Interface/home_student.dart';
 
 class ChoiceScreen extends StatelessWidget {
   const ChoiceScreen({super.key});
@@ -49,7 +50,7 @@ class ChoiceScreen extends StatelessWidget {
                     Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => const LoginScreen(),
+                        builder: (context) => const HomeStudent(),
                       ),
                     
             );}
