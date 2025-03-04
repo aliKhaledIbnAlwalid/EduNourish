@@ -17,40 +17,37 @@ class ParentHome extends StatefulWidget {
 }
 
 class _ParentHomeState extends State<ParentHome> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: _selectedIndex > 0 && _selectedIndex < 4
-          ? AppBar(
-              backgroundColor: _appBarColors[_selectedIndex],
-              leading: IconButton(
-                icon: const Icon(Icons.format_list_bulleted_outlined,
-                    color: Colors.black),
-                onPressed: () {},
-              ),
-              actions: [
-                IconButton(
-                  icon: const Icon(Icons.notifications_none_outlined,
-                      color: Colors.black),
-                  onPressed: () {},
-                ),
-              ],
-            )
-          : null,
+      appBar: _selectedIndex > 0 && _selectedIndex < 4?
+      AppBar(
+        backgroundColor: _appBarColors[_selectedIndex],
+        leading: IconButton(
+          icon: const Icon(Icons.format_list_bulleted_outlined, color: Colors.black),
+          onPressed: (){},
+        ),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.notifications_none_outlined, color: Colors.black),
+            onPressed: () {},
+          ),
+        ],
+      ):null,
       body: bodyTabs[_selectedIndex],
       bottomNavigationBar: Container(
         color: _backgroundColorForBottomNavigationBarColors[_selectedIndex],
         child: Padding(
-          padding: const EdgeInsets.only(
+          padding:  const EdgeInsets.only(
             left: 8,
             bottom: 8,
             right: 8,
           ),
           child: GNav(
-            backgroundColor:
-                _backgroundColorForBottomNavigationBarColors[_selectedIndex],
+            backgroundColor: _backgroundColorForBottomNavigationBarColors[_selectedIndex],
             tabBackgroundColor: const Color(0xFF88cbf5),
-            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+            padding: const EdgeInsets.symmetric(horizontal: 16,vertical: 16),
             tabs: [
               GButton(
                 icon: Icons.circle,
@@ -72,15 +69,13 @@ class _ParentHomeState extends State<ParentHome> {
               ),
               GButton(
                 icon: Icons.circle,
-                leading:
-                    SvgPicture.asset('assets/parent/icons/directions_bus.svg'),
+                leading: SvgPicture.asset('assets/parent/icons/directions_bus.svg'),
                 text: '',
                 iconColor: Colors.black,
               ),
               GButton(
                 icon: Icons.circle,
-                leading:
-                    SvgPicture.asset('assets/parent/icons/User Profile 02.svg'),
+                leading: SvgPicture.asset('assets/parent/icons/User Profile 02.svg'),
                 text: '',
                 iconColor: Colors.black,
               ),
@@ -94,6 +89,7 @@ class _ParentHomeState extends State<ParentHome> {
           ),
         ),
       ),
+
     );
   }
 
@@ -105,19 +101,21 @@ class _ParentHomeState extends State<ParentHome> {
     Colors.transparent,
   ];
 
-  List<Widget> bodyTabs = [
-     SettingsScreen(),
-    const PaymentScreen(),
-    const ParentHomeScreen(),
+  List<Widget> bodyTabs =[
+    SettingsScreen(),
+    PaymentScreen(),
+    ParentHomeScreen(),
     BusScreen(),
     const ParentProfile(),
   ];
 
-  final List<Color> _backgroundColorForBottomNavigationBarColors = [
-    Colors.white,
-    const Color(0xFFB4DFEB),
-    const Color(0xFF72B7DC),
-    const Color(0xFF70C1F4),
-    const Color(0xFF7ABED1),
-  ];
+
+ final List<Color> _backgroundColorForBottomNavigationBarColors = [
+   Colors.white,
+   const Color(0xFFB4DFEB),
+   const Color(0xFF72B7DC),
+   const Color(0xFF70C1F4),
+   const Color(0xFF7ABED1),
+ ];
+
 }

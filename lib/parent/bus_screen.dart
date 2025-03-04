@@ -1,6 +1,6 @@
 import 'package:edunourish/parent/payment_screen.dart';
 import 'package:edunourish/parent/settings_screen.dart';
-import 'package:edunourish/parent_home.dart';
+import 'package:edunourish/parent/parent_home.dart';
 import 'package:edunourish/parent/parent_profile.dart';
 import 'package:flutter/material.dart';
 // import 'package:google_maps_flutter/google_maps_flutter.dart';
