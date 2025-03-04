@@ -1,9 +1,6 @@
 import 'package:edunourish/login/login_screen.dart';
-import 'package:edunourish/parent/parent_home_screen.dart';
-
 import 'package:flutter/material.dart';
-
-import '../Student_Interface/home_student.dart';
+import '../Student_Interface/home_screen.dart';
 
 class ChoiceScreen extends StatelessWidget {
   const ChoiceScreen({super.key});
@@ -12,75 +9,85 @@ class ChoiceScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.blueAccent,
       body: Column(
-       mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          SizedBox( 
-            height: MediaQuery.of(context).size.height*0.2,
+          SizedBox(
+            height: MediaQuery.of(context).size.height * 0.2,
             width: double.infinity,
-            child: GestureDetector(child: Container(color: Colors.green,
-            child: const Center(
-              child: Text('Parent',style: TextStyle(
-                color: Colors.white,
-                fontSize: 30
-              ),),
-            ),
-            ),
-                  onTap: () {
-                    Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const ParentHomeScreen(),
-                      ),
-                    
-            );}
-          ),),
-          const SizedBox(height: 20,),
-          SizedBox( 
-            height: MediaQuery.of(context).size.height*0.2,
+            child: GestureDetector(
+                child: Container(
+                  color: Colors.green,
+                  child: const Center(
+                    child: Text(
+                      'Parent',
+                      style: TextStyle(color: Colors.white, fontSize: 30),
+                    ),
+                  ),
+                ),
+                onTap: () {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const HomeScreen(),
+                    ),
+                  );
+                }),
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          SizedBox(
+            height: MediaQuery.of(context).size.height * 0.2,
             width: double.infinity,
-            child: GestureDetector(child: Container(color: Colors.green,
-            child: const Center(
-              child: Text('Student',style: TextStyle(
-                color: Colors.white,
-                fontSize: 30
-              ),),
-            ),
-            ),
-                  onTap: () {
-                    Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const HomeStudent(),
-                      ),
-                    
-            );}
-          ),),
-          const SizedBox(height: 20,),
-           SizedBox( 
-            height: MediaQuery.of(context).size.height*0.2,
+            child: GestureDetector(
+                child: Container(
+                  color: Colors.green,
+                  child: const Center(
+                    child: Text(
+                      'Student',
+                      style: TextStyle(color: Colors.white, fontSize: 30),
+                    ),
+                  ),
+                ),
+                onTap: () {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const HomeScreen(),
+                    ),
+                  );
+                }),
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          SizedBox(
+            height: MediaQuery.of(context).size.height * 0.2,
             width: double.infinity,
-            child: GestureDetector(child: Container(color: Colors.green,
-            child: const Center(
-              child: Text('Teacher',style: TextStyle(
-                color: Colors.white,
-                fontSize: 30
-              ),),
-            ),
-            ),
-                  onTap: () {
-                    Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const LoginScreen(),
-                      ),
-                    
-            );}
-          ),),
+            child: GestureDetector(
+                child: Container(
+                  color: Colors.green,
+                  child: const Center(
+                    child: Text(
+                      'Teacher',
+                      style: TextStyle(color: Colors.white, fontSize: 30),
+                    ),
+                  ),
+                ),
+                onTap: () {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const LoginScreen(),
+                    ),
+                  );
+                }),
+          ),
         ],
       ),
-
     );
-  }}
+  }
+}
 //     return Scaffold(
 //       backgroundColor: const Color(0xFFCBEFF4),
 //       body: SingleChildScrollView(

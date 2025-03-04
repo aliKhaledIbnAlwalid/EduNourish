@@ -2,6 +2,7 @@ import 'package:concentric_transition/page_view.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'choice_screen.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class OnBoardingScreen extends StatelessWidget {
   OnBoardingScreen({super.key});
@@ -140,13 +141,15 @@ class ItemWidget extends StatelessWidget {
               const Spacer(flex: 10),
               if (isLastPage)
                 ElevatedButton(
-                  onPressed: () {
+                  onPressed: () async{
                     Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
                         builder: (context) => const ChoiceScreen(),
                       ),
                     );
+                    final prefs = await SharedPreferences.getInstance();
+                    prefs.setBool('showHome', true);
                   },
                   child: const Text('Get Started'),
                 ),
