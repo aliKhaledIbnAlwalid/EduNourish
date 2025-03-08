@@ -2,7 +2,7 @@ flutter_native_splash:
   android: true
   ios: true
   web: true
-  background_image: "assets/splashSceen.png"
+  background_image: "assets/Intro_Screen_login/splashSceen.png"
 
 
   

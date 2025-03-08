@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
+import 'drawer_page.dart';
 
-import '../List/home_drawer.dart';
-
-class TeachersInfo extends StatelessWidget {
-  const TeachersInfo({super.key});
+class MyTeachers extends StatelessWidget {
+  const MyTeachers({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,7 +29,7 @@ class TeachersInfo extends StatelessWidget {
           )
         ],
       ),
-      drawer: const HomeDrawer(),
+      drawer: const DrawerPage(),
       body: Stack(
         children: [
           Container(

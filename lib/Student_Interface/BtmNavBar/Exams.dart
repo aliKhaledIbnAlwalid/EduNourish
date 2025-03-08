@@ -1,9 +1,8 @@
+import 'package:edunourish/Student_Interface/List/drawer_page.dart';
 import 'package:flutter/material.dart';
 
-import '../List/home_drawer.dart';
-
-class TaskList extends StatelessWidget {
-  const TaskList({super.key});
+class Exams extends StatelessWidget {
+  const Exams({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,7 +18,7 @@ class TaskList extends StatelessWidget {
             )
           ],
         ),
-        drawer: const HomeDrawer(),
+        drawer: const DrawerPage(),
         body: Stack(children: [
           Container(
             decoration: const BoxDecoration(

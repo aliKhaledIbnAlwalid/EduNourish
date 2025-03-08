@@ -1,7 +1,7 @@
 import 'package:concentric_transition/page_view.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
-import 'choice_screen.dart';
+import '../choice_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class OnBoardingScreen extends StatelessWidget {
@@ -10,7 +10,7 @@ class OnBoardingScreen extends StatelessWidget {
     ItemData(
       title: "SMART EDUCATION",
       subtitle: "Connect, learn, and grow with innovative education solutions.",
-      image: const AssetImage("assets/image-1.png"),
+      image: const AssetImage("assets/Intro_Screen_login/image-1.png"),
       backgroundColor: const Color.fromARGB(255, 107, 157, 249),
       titleColor: const Color.fromARGB(255, 131, 243, 189),
       subtitleColor: Colors.white,
@@ -20,7 +20,7 @@ class OnBoardingScreen extends StatelessWidget {
     ItemData(
       title: "BEST TEACHERS",
       subtitle: "Experience quality education from top teachers.",
-      image: const AssetImage("assets/image-2.png"),
+      image: const AssetImage("assets/Intro_Screen_login/image-2.png"),
       backgroundColor: const Color(0xFF4757C0),
       titleColor: Colors.red.shade400,
       subtitleColor: Colors.black,
@@ -30,7 +30,7 @@ class OnBoardingScreen extends StatelessWidget {
     ItemData(
       title: "SMART STUDENTS",
       subtitle: "A smarter way for students to reach new heights.",
-      image: const AssetImage("assets/image-3.png"),
+      image: const AssetImage("assets/Intro_Screen_login/image-3.png"),
       backgroundColor: const Color.fromARGB(255, 107, 157, 249),
       titleColor: Colors.greenAccent,
       subtitleColor: Colors.white,
@@ -40,7 +40,7 @@ class OnBoardingScreen extends StatelessWidget {
     ItemData(
       title: "MODERN EDUCATION",
       subtitle: "Where creativity and technology drive learning.",
-      image: const AssetImage("assets/image-4.png"),
+      image: const AssetImage("assets/Intro_Screen_login/image-4.png"),
       backgroundColor: const Color(0xFF4757C0),
       titleColor: Colors.red.shade400,
       subtitleColor: Colors.black,

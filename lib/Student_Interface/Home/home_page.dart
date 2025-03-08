@@ -1,6 +1,10 @@
+import 'package:edunourish/Student_Interface/BtmNavBar/Exams.dart';
 import 'package:flutter/material.dart';
 
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+
+import '../List/drawer_page.dart';
+import 'Restaurant.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -16,6 +20,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       extendBodyBehindAppBar: true,
       extendBody: true,
+      drawer: const DrawerPage(),
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
@@ -25,10 +30,6 @@ class _HomePageState extends State<HomePage> {
             onPressed: () {},
           )
         ],
-        leading: IconButton(
-          icon: const Icon(Icons.menu, size: 30),
-          onPressed: () {},
-        ),
       ),
       body: Stack(
         children: [
@@ -110,9 +111,30 @@ class _HomePageState extends State<HomePage> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    _buildFeatureCard("assets/student/exam.png", "Exams"),
-                    _buildFeatureCard(
-                        "assets/student/Calendar.png", "Attendance"),
+                    GestureDetector(
+                      child: _buildFeatureCard(
+                          "assets/student/Home_Student/exam.png", "Exams"),
+                      onTap: () {
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const Exams(),
+                          ),
+                        );
+                      },
+                    ),
+                     GestureDetector(
+                      child: _buildFeatureCard(
+                          "assets/student/Home_Student/Calendar.png", "Attendance"),
+                      onTap: () {
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const Exams(),
+                          ),
+                        );
+                      },
+                    ),
                   ],
                 ),
               ),
@@ -121,9 +143,21 @@ class _HomePageState extends State<HomePage> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    _buildFeatureCard("assets/student/Toast.png", "Restaurant"),
+                    GestureDetector(
+                      child: _buildFeatureCard(
+                          "assets/student/Home_Student/Toast.png", "Restaurent"),
+                      onTap: () {
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) =>  Restaurant(),
+                          ),
+                        );
+                      },
+                    ),
                     _buildFeatureCard(
-                        "assets/student/TaskList.png", "Task List"),
+                        "assets/student/Home_Student/TaskList.png",
+                        "Task List"),
                   ],
                 ),
               ),
