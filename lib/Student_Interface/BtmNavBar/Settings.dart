@@ -6,7 +6,7 @@ class SettingsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xffe8ba5c),
+      backgroundColor: const Color(0xff98afb0),
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
@@ -17,7 +17,7 @@ class SettingsPage extends StatelessWidget {
         children: [
           const CircleAvatar(
             radius: 60,
-            backgroundImage: AssetImage("assets/Intro_Screen_login/image-2.png"),
+            backgroundImage: AssetImage("assets/face.png"),
           ),
           const SizedBox(height: 10),
           const Text("HI",
@@ -26,13 +26,13 @@ class SettingsPage extends StatelessWidget {
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
             decoration: BoxDecoration(
-              color: Colors.green,
+              color: const Color(0xff98afb0),
               borderRadius: BorderRadius.circular(25),
             ),
             child: const Text(
               "Mario Samy",
               style: TextStyle(
-                  color: Colors.white,
+                  color: Colors.black,
                   fontWeight: FontWeight.bold,
                   fontSize: 20),
             ),
@@ -41,7 +41,7 @@ class SettingsPage extends StatelessWidget {
           Expanded(
             child: Container(
               decoration: const BoxDecoration(
-                color: Colors.white,
+                color: const  Color(0xffe8e6e9),
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(30),
                   topRight: Radius.circular(30),

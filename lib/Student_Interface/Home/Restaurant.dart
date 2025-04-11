@@ -1,5 +1,4 @@
-import 'package:edunourish/Student_Interface/BtmNavBar/profile_page.dart';
-import 'package:edunourish/Student_Interface/Home/home_page.dart';
+import 'package:edunourish/Student_Interface/BtmNavBar/profile_page_student.dart';
 import 'package:flutter/material.dart';
 
 class Restaurant extends StatelessWidget {
@@ -11,7 +10,10 @@ class Restaurant extends StatelessWidget {
           Container(
             decoration: const BoxDecoration(
               gradient: LinearGradient(
-                colors: [Color(0xfffacf74), Color(0xffe8ba5c)],
+                colors: [
+                  Color(0xffcdc9cf),
+                  Color(0xffe8e6e9),
+                ],
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
               ),
@@ -27,13 +29,11 @@ class Restaurant extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       GestureDetector(
-                        child: Icon(Icons.arrow_back, color: Colors.black),
+                        child:
+                            const Icon(Icons.arrow_back, color: Colors.black),
                         onTap: () {
-                          Navigator.pushReplacement(
+                          Navigator.pop(
                             context,
-                            MaterialPageRoute(
-                              builder: (context) => const HomePage(),
-                            ),
                           );
                         },
                       ),
@@ -48,7 +48,7 @@ class Restaurant extends StatelessWidget {
                           Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => const ProfilePage(),
+                              builder: (context) => const ProfilePageStudent(),
                             ),
                           );
                         },
@@ -72,11 +72,11 @@ class Restaurant extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 20),
-                  const Text("It's Navratri!!!",
+                  const Text("It's Canteen",
                       style: TextStyle(
                           fontSize: 22,
                           fontWeight: FontWeight.bold,
-                          color: Colors.red)),
+                          color: Colors.black)),
                   const Text("Get festive-ready with Swiggy!",
                       style: TextStyle(fontSize: 16, color: Colors.black54)),
                   const SizedBox(height: 20),
@@ -94,6 +94,12 @@ class Restaurant extends StatelessWidget {
                           "assets/student/Home_Student/Toast.png",
                         ),
                         _buildCategoryCard('Dineout', 'UPTO 50% OFF',
+                            "assets/student/Home_Student/Toast.png"),
+                        _buildCategoryCard('Genie', 'Pick-up & Drop',
+                            "assets/student/Home_Student/Toast.png"),
+                        _buildCategoryCard('Genie', 'Pick-up & Drop',
+                            "assets/student/Home_Student/Toast.png"),
+                        _buildCategoryCard('Genie', 'Pick-up & Drop',
                             "assets/student/Home_Student/Toast.png"),
                         _buildCategoryCard('Genie', 'Pick-up & Drop',
                             "assets/student/Home_Student/Toast.png"),
@@ -117,6 +123,7 @@ class Restaurant extends StatelessWidget {
 
   Widget _buildCategoryCard(String title, String offer, String imagePath) {
     return Card(
+      color: const Color(0xff98afb0),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
       elevation: 4,
       child: Column(
@@ -130,7 +137,7 @@ class Restaurant extends StatelessWidget {
           const SizedBox(height: 5),
           Text(offer,
               style: const TextStyle(
-                  color: Colors.red, fontWeight: FontWeight.bold)),
+                  color: Colors.black, fontWeight: FontWeight.bold)),
         ],
       ),
     );

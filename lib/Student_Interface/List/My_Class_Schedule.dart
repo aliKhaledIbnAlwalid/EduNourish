@@ -1,24 +1,46 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import '../Home/notifiactions_screen.dart';
+
 class MyClassSchedule extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.amber[200],
+      backgroundColor:  const Color(0xff98afb0),
       appBar: AppBar(
         backgroundColor: Colors.transparent,
-        actions: const [Icon(Icons.notifications)],
+        leading: IconButton(
+          icon: const Icon(Icons.notifications_none_outlined, size: 30),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => NeoNotificationsScreen(),
+              ),
+            );
+          },
+        ),
+        actions: const [
+          Image(
+            image: AssetImage('assets/Intro_Screen_login/EduIcon.png'),
+            height: 50,
+            width: 50,
+          ),
+        ],
       ),
       body: Padding(
-        padding: const EdgeInsets.all(10.0),
+        padding: const EdgeInsets.only(
+          left: 10,
+          right: 10,
+        ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Center(
               child: Text(
                 "Class Schedule",
-                style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 27, fontWeight: FontWeight.bold),
               ),
             ),
             Padding(
@@ -47,23 +69,23 @@ class MyClassSchedule extends StatelessWidget {
                 children: [
                   SubjectCard(
                       subject: "Math",
-                      imagePath: "assets/student/My_Teachers/teacher3.png"),
+                      imagePath: "assets/images/scienceLogo.png"),
                   const SizedBox(width: 10),
                   SubjectCard(
                       subject: "Science",
-                      imagePath: "assets/student/My_Teachers/teacher3.png"),
+                      imagePath: "assets/images/scienceLogo.png"),
                   const SizedBox(width: 10),
                   SubjectCard(
                       subject: "English",
-                      imagePath: "assets/student/My_Teachers/teacher3.png"),
+                      imagePath: "assets/images/scienceLogo.png"),
                   const SizedBox(width: 10),
                   SubjectCard(
                       subject: "Arabic",
-                      imagePath: "assets/student/My_Teachers/teacher3.png"),
+                      imagePath: "assets/images/scienceLogo.png"),
                   const SizedBox(width: 10),
                   SubjectCard(
                       subject: "ICT",
-                      imagePath: "assets/student/My_Teachers/teacher3.png"),
+                      imagePath: "assets/images/scienceLogo.png"),
                 ],
               ),
             ),
@@ -97,15 +119,16 @@ class SubjectCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(10),
+      height: 100,
+      width: 150,
       decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(10),
+        color: const  Color(0xffe8e6e9),
+        borderRadius: BorderRadius.circular(15),
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Image.asset(imagePath, width: 30, height: 30),
+          Image.asset(imagePath, width: 50, height: 50),
           const SizedBox(width: 8),
           Text(subject,
               style:
