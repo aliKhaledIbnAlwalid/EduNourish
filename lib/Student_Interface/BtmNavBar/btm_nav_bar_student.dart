@@ -44,7 +44,7 @@ class _BtmNavBarStudentState extends State<BtmNavBarStudent> {
     const DrawerPage(),
     MyClassSchedule(),
     const HomeStudent(),
-    const Activities(),
+     Activities(),
   ];
 
   @override

@@ -2,25 +2,25 @@ import 'package:flutter/material.dart';
 
 class NeoNotificationsScreen extends StatelessWidget {
   final List<NeoNotification> notifications = [
-    // NeoNotification(
-    //   title: 'The results are in! Your earnings added up to \$0.04 in October.',
-    //   time: '5h',
-    // ),
-    // NeoNotification(
-    //   title:
-    //       'Get a more rewarding experience with the Mobile & Personal Protection Bundle.',
-    //   time: '1d',
-    // ),
-    // NeoNotification(
-    //   title:
-    //       'Welcome to Neo Money™! Don\'t forget to make a deposit to start earning 2.25% interest*.',
-    //   time: '3d',
-    // ),
-    // NeoNotification(
-    //   title:
-    //       'Don\'t miss out! For a limited time, get up to \$85* for each friend you refer to Neo.',
-    //   time: '4d',
-    // ),
+    NeoNotification(
+      title: 'The results are in! Your earnings added up to \$0.04 in October.',
+      time: '5h',
+    ),
+    NeoNotification(
+      title:
+          'Get a more rewarding experience with the Mobile & Personal Protection Bundle.',
+      time: '1d',
+    ),
+    NeoNotification(
+      title:
+          'Welcome to Neo Money™! Don\'t forget to make a deposit to start earning 2.25% interest*.',
+      time: '3d',
+    ),
+    NeoNotification(
+      title:
+          'Don\'t miss out! For a limited time, get up to \$85* for each friend you refer to Neo.',
+      time: '4d',
+    ),
   ];
 
   NeoNotificationsScreen({super.key});
@@ -32,7 +32,7 @@ class NeoNotificationsScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text(
           'Notifiactions  ',
-          style:  TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+          style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
         ),
         centerTitle: true,
         backgroundColor: Colors.transparent,
@@ -106,6 +106,11 @@ Widget _buildNotificationItem(
     ),
     title: Text(
       notification.title,
+      style: const TextStyle(
+        fontSize: 16,
+        fontWeight: FontWeight.bold,
+        color: Colors.black,
+      ),
     ),
     trailing: Row(
       mainAxisSize: MainAxisSize.min,

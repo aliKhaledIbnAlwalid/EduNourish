@@ -7,7 +7,7 @@ class MyClassSchedule extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor:  const Color(0xff98afb0),
+      backgroundColor: const Color(0xffcdc9cf),
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         leading: IconButton(

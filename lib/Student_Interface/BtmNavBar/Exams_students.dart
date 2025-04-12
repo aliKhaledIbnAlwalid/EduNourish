@@ -137,12 +137,53 @@ class _ExamScreenBodyState extends State<ExamScreenBody> {
     );
   }
 
+  // Widget _buildFilterSection() {
+  //   return Padding(
+  //     padding: const EdgeInsets.all(16.0),
+  //     child: Row(
+  //       children: [
+  //         Expanded(
+  //           child: _buildDropdown(
+  //             labelText: 'Exam Type',
+  //             hintText: 'All',
+  //             value: selectedType,
+  //             items: exams.map((e) => e.type).toSet().toList(),
+  //             onChanged: (value) => setState(() => selectedType = value),
+  //           ),
+  //         ),
+  //         const SizedBox(width: 16),
+  //         Expanded(
+  //           child: _buildDropdown(
+  //             labelText: 'Exam Subject',
+  //             hintText: 'All',
+  //             value: selectedSubject,
+  //             items: exams.map((e) => e.subject).toSet().toList(),
+  //             onChanged: (value) => setState(() => selectedSubject = value),
+  //           ),
+  //         ),
+  //       ],
+  //     ),
+  //   );
+  // }
   Widget _buildFilterSection() {
-    return Padding(
-      padding: const EdgeInsets.all(16.0),
-      child: Row(
-        children: [
-          Expanded(
+  return Padding(
+    padding: const EdgeInsets.all(16.0),
+    child: Row(
+      children: [
+        Expanded(
+          child: Container(
+            decoration: BoxDecoration(
+              color: Colors.grey.shade200,
+              borderRadius: BorderRadius.circular(12),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.1),
+                  blurRadius: 8,
+                  offset: Offset(0, 4),
+                ),
+              ],
+            ),
+            padding: const EdgeInsets.all(8.0),
             child: _buildDropdown(
               labelText: 'Exam Type',
               hintText: 'All',
@@ -151,8 +192,22 @@ class _ExamScreenBodyState extends State<ExamScreenBody> {
               onChanged: (value) => setState(() => selectedType = value),
             ),
           ),
-          const SizedBox(width: 16),
-          Expanded(
+        ),
+        const SizedBox(width: 16),
+        Expanded(
+          child: Container(
+            decoration: BoxDecoration(
+              color: Colors.grey.shade200,
+              borderRadius: BorderRadius.circular(12),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.1),
+                  blurRadius: 8,
+                  offset: Offset(0, 4),
+                ),
+              ],
+            ),
+            padding: const EdgeInsets.all(8.0),
             child: _buildDropdown(
               labelText: 'Exam Subject',
               hintText: 'All',
@@ -161,10 +216,12 @@ class _ExamScreenBodyState extends State<ExamScreenBody> {
               onChanged: (value) => setState(() => selectedSubject = value),
             ),
           ),
-        ],
-      ),
-    );
-  }
+        ),
+      ],
+    ),
+  );
+}
+
 
   Widget _buildDropdown({
     required String labelText,

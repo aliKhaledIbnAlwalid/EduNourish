@@ -1,12 +1,13 @@
 import 'package:edunourish/Student_Interface/BtmNavBar/Exams_students.dart';
 import 'package:edunourish/Student_Interface/BtmNavBar/Settings.dart';
 import 'package:edunourish/Student_Interface/BtmNavBar/profile_page_student.dart';
-import 'package:edunourish/Student_Interface/Home/TaskList.dart';
+import 'package:edunourish/Student_Interface/Home/subject_screen.dart';
 import 'package:flutter/material.dart';
 import '../Home/Attendance.dart';
 import '../Home/Restaurant.dart';
 import '../Home/notifiactions_screen.dart';
 import 'My_Class_Schedule.dart';
+import 'grades_student.dart';
 import 'my_teachers.dart';
 
 class DrawerPage extends StatelessWidget {
@@ -15,9 +16,9 @@ class DrawerPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor:  const Color(0xff98afb0),
+      backgroundColor: const Color(0xffcdc9cf),
       appBar: AppBar(
-        backgroundColor:  const Color(0xff98afb0),
+        backgroundColor: const Color(0xffcdc9cf),
         elevation: 0,
         leading: IconButton(
           icon: const Icon(Icons.notifications_none_outlined, size: 30),
@@ -43,7 +44,7 @@ class DrawerPage extends StatelessWidget {
           const Center(
             child: CircleAvatar(
               radius: 80,
-              backgroundColor:   Color(0xff98afb0),
+              backgroundColor: Color(0xff98afb0),
               backgroundImage:
                   AssetImage('assets/Intro_Screen_login/EduIcon.png'),
             ),
@@ -151,7 +152,7 @@ class DrawerPage extends StatelessWidget {
                       color: Colors.black,
                     ),
                     title: const Text(
-                      'Task List',
+                      'grades',
                       style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
@@ -162,7 +163,7 @@ class DrawerPage extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const Tasklist(),
+                          builder: (context) =>  const GradeScreen(),
                         ),
                       );
                     },
